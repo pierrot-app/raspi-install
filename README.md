@@ -1,24 +1,20 @@
-<h1 align="center">Pierrot raspberry pi install</h1>
-<h4 align="center">Raspbian setup with ease</h4>
+<h1 align="center">Pierrot raspbian install</h1>
+<h4 align="center">Raspbian setup for macOS</h4>
 
 <br><br>
 
 ## How it works
 
-Plug your disk and check its identifier
+Set your network options in the `wifi.config` file
 ```bash
-diskutil list
-```
-
-Set your options in the `setup.config` file
-```bash
-DISK="/dev/<myDiskIdentifier>"
+COUNTRY="my-country-ISO-code"
 SSID="my-wifi-name"
 PSK="my-wifi-assword"
 ```
 
-Once you identified your disk, unmount it and run the script
+Plug your disk and check its identifier, then run the setup
 ```bash
-diskutil unmountDisk /dev/<myDiskIdentifier>
-sudo sh setup.sh
+diskutil list
+# My disk identitfier is /dev/disk2
+sudo sh setup.sh -d /dev/disk2
 ```
